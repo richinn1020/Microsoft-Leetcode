@@ -65,7 +65,7 @@ public class Codec {
 // Codec codec = new Codec();
 // codec.deserialize(codec.serialize(root));
 
-// Level order Traversal
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -75,6 +75,8 @@ public class Codec {
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+// Level order Traversal
 public class Codec {
 
     // Encodes a tree to a single string.
