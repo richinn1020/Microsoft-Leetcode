@@ -18,19 +18,21 @@ class Codec {
 
     // Encodes a tree to a single string.
     public String serialize(Node root) {
-        List<String> list=new LinkedList<>();
-        serializeHelper(root,list);
-        return String.join(",",list);
+        StringBuilder sb = new StringBuilder();
+        serializeHelper(root, sb);
+        return sb.toString();
     }
     
-    private void serializeHelper(Node root, List<String> list){
+    private void serializeHelper(Node root, StringBuilder sb){
         if(root==null){
             return;
         }else{
-            list.add(String.valueOf(root.val));
-            list.add(String.valueOf(root.children.size()));
+            sb.append(String.valueOf(root.val));
+            sb.append(",");
+            sb.append(String.valueOf(root.children.size()));
+            sb.append(",");
             for(Node child:root.children){
-                serializeHelper(child,list);
+                serializeHelper(child,sb);
             }
         }
     }
